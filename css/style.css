@@ -1,0 +1,28 @@
+.main-container {
+    display: grid;
+}
+
+
+.header {
+    background-color: blueviolet; 
+}
+.bell {
+    width:20px;
+}
+.inline {
+    display: inline-block;
+    color: white;
+}
+h1.inline span {
+    font-weight: normal;
+}
+
+
+
+.nav{
+    background-color: blue;
+}
+.icon {
+    display: inline-block;
+    width: 30px;
+}

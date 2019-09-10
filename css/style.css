@@ -60,3 +60,23 @@ h1.inline span {
     display: flex;
     flex-direction: row;
 }
+.chart {
+    display: inline-block;
+    width:470px;
+    height: 300px;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blue;
+}
+.social-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+

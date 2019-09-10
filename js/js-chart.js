@@ -61,8 +61,39 @@ var myBarChart = new Chart(ctx2, {
         labels: ['S','M','T','W','T','F','S'],
         datasets: [{
             backgroundColor: 'rgba(255, 99, 132,.4)',
-            data: [0,50,100,150,200,250]
+            data: [50,75,150,100,200,175,75]
         }],
     },
-    options:{} 
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMax: 250,
+                    suggestedMin: 0,
+                    stepSize: 50,
+                    
+                    labelOffset: 25,
+                    //padding: 40
+                }
+            }]
+        }
+    }
+});
+
+
+
+
+
+var ctx3 = document.getElementById('myChart3').getContext('2d');
+var myBarChart = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ['Phone','Tablets','Desktop'],
+        datasets: [{
+            backgroundColor: 'rgba(255, 99, 132,.4)',
+            data: [20,20,60]
+        }],
+    },
+    options: {
+    }
 });

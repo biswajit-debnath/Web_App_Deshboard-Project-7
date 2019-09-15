@@ -2,6 +2,8 @@
 <head>
 <title>Web App Deshboard</title>
 <link rel="stylesheet" href="css/normalize.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
 <link rel="stylesheet" href="css/style.css">
@@ -11,8 +13,9 @@
         <header>
             <div class="header-container">
                 <ul>
-                    <li><h2>Your<span>App</span></h2></li>
+                    <li><h1>Your<span>App</span><small>TM</small></small></h1></li>
                     <li><div class="bell">
+                        <div class="notification"></div>
                         <?xml version="1.0" encoding="utf-8"?>
                             <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -29,14 +32,14 @@
                         </svg>
                     </div></li>   
                     <li><img src="images/member-1.jpg" class="profile-img" alt=""></li>                
-                    <li><p class="name">Name</p></li>
+                    <li><p class="name">Biswjit Debnath</p></li>
                 </ul>
             </div>
         </header>
 
         <nav>
             <div class="nav-container">
-                <div class="deshboard icon">
+                <div class="deshboard nav-icon">
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg version="1.1" id="Line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -57,7 +60,7 @@
                     </g>
                     </svg>
                 </div>
-                <div class="members icon">
+                <div class="members nav-icon">
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg version="1.1" id="Line_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -78,7 +81,7 @@
                     </g>
                     </svg>
                 </div>
-                <div class="visits icon">
+                <div class="visits nav-icon">
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg version="1.1" id="Line_12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -97,7 +100,7 @@
                     </g>
                     </svg>
                 </div>
-                <div class="setting icon">
+                <div class="setting nav-icon">
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg version="1.1" id="Line_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -128,17 +131,22 @@
                 <div class="main-header">
                         <h2>Dashboard</h2>
                         <div class="main-search">
-                            <input type="text" class="search-box" name="search-box" placeholder="Search">
+                            <div class="search-container">
+                                <input type="text" class="search-box" name="search-box" placeholder="Search">
+                                <button class="search-btn">But</button>
+                            </div>
                         </div>
                 </div>
             
-                <div class="popUp">
-
+                <div class="popUp" style="padding: 15px 15px 15px 20px;"> 
+                    <p>Alert</p>
+                    <p> Thuis is an alert that will poo up on page load</p>
+                    <button class="popUp-btn">x</button>
                 </div>
 
                 <div class="traffic" style="padding-right: 10px">
                     <div class="traffic-header">
-                        <h3>Traffic</h3>
+                        <h3>TRAFFIC</h3>
                         <ul>
                             <li class="traffic-link">Hourly</li>
                             <li class="traffic-link">Daily</li>
@@ -152,14 +160,14 @@
                 </div>
     
                 <div class="daily-traffic">
-                    <h3>Daily Traffic</h3>
+                    <h3>DAILY TRAFFIC</h3>
                     <div class="widget-half">
                         <canvas id="myChart2"></canvas>
                     </div>
                 </div>
 
                 <div class="mobile-user">
-                    <h3>Mobile Users</h3>
+                    <h3>MOBILE USERS</h3>
                     <div class="widget-half">
                         <canvas id="myChart3"></canvas>
                     </div>
@@ -167,7 +175,7 @@
              
                 
                 <div class="social-stats">
-                    <h3>Social Stats</h3>
+                    <h3>SOCIAL STATES</h3>
                     <ul class="social-container">
                         <li>
                             <div class="social">
@@ -230,18 +238,18 @@
              
 
                 <div class="new-member">
-                    <h3>New Members</h3>
+                    <h3>NEW MEMBERS</h3>
                     <div class="member">
                         <img src="images/member-1.jpg" class="member-img" alt="Member1 pic">
-                        <div>
-                            <p>Victoria chambers80</p>
+                        <div class="member-data">
+                            <p>Victoria Chambers</p>
                             <a>victoria.chambers80@example.com</a>
                         </div>
                         <p>10/15/15</p>
                     </div>
                     <div class="member">
                         <img src="images/member-2.jpg" class="member-img" alt="Member2 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Dale Byrd</p>
                             <a>dale.byrd52@example.com</a>
                         </div>
@@ -249,7 +257,7 @@
                     </div>
                     <div class="member">
                         <img src="images/member-3.jpg" class="member-img" alt="Member3 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Dawn Wood</p>
                             <a>dawn.wood16@example.com</a>
                         </div>
@@ -257,7 +265,7 @@
                     </div>
                     <div class="member">
                         <img src="images/member-4.jpg" class="member-img" alt="Member4 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Dan Oliver</p>
                             <a>dan.oliver8280@example.com</a>
                         </div>
@@ -266,54 +274,54 @@
                 </div>
 
                 <div class="recent-activity">
-                    <h3>Recent Activity</h3>
+                    <h3>RECENT ACTIVITY</h3>
                     <div class="member">
                         <img src="images/member-1.jpg" class="member-img" alt="Member1 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Victoria Chambers commented on YouApp's SEO Tips</p>
-                            <p>4 hours ago</p>
+                            <span>4 hours ago</span>
                         </div>
-                        <p>10/15/15</p>
+                        <img src="icons/arrow.svg" class="arrow">
                     </div>
                     <div class="member">
                         <img src="images/member-2.jpg" class="member-img" alt="Member2 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Dale Byrd like the post Facebook's Changes for 2016</p>
-                            <p>5 hours ago</p>
+                            <span>5 hours ago</span>
                         </div>
-                        <p>10/15/15</p>
+                        <img src="icons/arrow.svg" class="arrow">
                     </div>
                     <div class="member">
                         <img src="images/member-3.jpg" class="member-img" alt="Member3 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Dawn Wood commented on Facebook's Changes for 2016</p>
-                            <p>5 hours ago</p>
+                            <span>5 hours ago</span>
                         </div>
-                        <p>10/15/15</p>
+                        <img src="icons/arrow.svg" class="arrow">
                     </div>
                     <div class="member">
                         <img src="images/member-4.jpg" class="member-img" alt="Member4 pic">
-                        <div>
+                        <div class="member-data">
                             <p>Dan Oliver posted YouApp's SEO Tips</p>
-                            <p>1 day ago</p>
+                            <span>1 day ago</span>
                         </div>
-                        <p>10/15/15</p>
+                        <img src="icons/arrow.svg" class="arrow">
                     </div>
                     
                 </div>
            
                 
                 <div class="message">
-                    <h3>Message User</h3>
+                    <h3>MESSAGE USER</h3>
                     <form>
                         <input class="search" type=text placeholder="Search for User">
                         <textarea class="mesz" placeholder="Message for User"></textarea>
-                        <button class="button">Send</button>
+                        <button class="button">SEND</button>
                     </form>
                 </div>  
 
                 <div class="setting">
-                    <h3>Setting</h3>
+                    <h3>SETTING</h3>
                     <div class="toggle-container">
                         <div class="toggle-label">
                             <p>Send Email Notifications</p>
@@ -340,12 +348,13 @@
                         </div>
                     </div>
                     <select class="select">
+                            <option value="" selected disabled>Select Timezone</option>
                         <option vlaue="utc">UTC</option>
                         <option vlaue="mumbai">MUMBAI</option>
                     </select>
                     <div class="set-btn-cont">
-                        <button>Save</button>
-                        <button>Cancel</button>
+                        <button class="save-btn">SAVE</button>
+                        <button>CANCEL</button>
                     </div>
                 </div>
             </div>
@@ -359,3 +368,4 @@
     <script src="js/js-chart.js"></script>
     <script src="js/app.js"></script>
 </body>
+</html>

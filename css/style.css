@@ -1,9 +1,10 @@
+/*Variables*/
 :root {
   --common-border: 1px solid #d8d5d5;
   --primary-color: #7477bf;
   --secondary-color: #4d4c72;
 }
-
+/*Setting the viewport*/
 body * {
   margin: 0;
   padding: 0;
@@ -14,8 +15,15 @@ body * {
 ul {
   list-style-type: none;
 }
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+checkbox:focus {
+  outline: none;
+}
 
-/*Grid Cotainer*/
+/*?--------------Grid Container------------------*/
 .grid-container {
   display: grid;
   grid-template-columns: 95px 1fr;
@@ -30,7 +38,7 @@ main {
   grid-column: 2/3;
 }
 
-/*Header*/
+/*?----------------Header-------------*/
 .header-container ul {
   height: 80px;
   align-items: center;
@@ -84,21 +92,33 @@ h1 small {
   margin-left: 15px;
 }
 
-/*Nav*/
+/*?---------------Nav---------------*/
 .nav-container {
   background-color: var(--secondary-color);
   height: 100%;
   padding-top: 10px;
 }
 .nav-icon {
+  position: relative;
   display: inline-block;
   width: 60px;
   height: 60px;
   padding: 10px;
   margin: 17px 14px;
 }
+.nav-icon-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  left: -70px;
+  top: 0px;
+}
+.nav-icon:hover > div {
+  background-color: lightgreen;
+}
 
-/*Main*/
+/*?Main*/
 .main-container {
   width: 100%;
   display: grid;
@@ -107,6 +127,8 @@ h1 small {
 .main-container > div:not(.main-header) {
   padding: 25px;
 }
+
+/*?Main Header*/
 h3 {
   margin-bottom: 25px;
   font-size: 1.4rem;
@@ -131,26 +153,29 @@ h3 {
   background-color: #fbfbfb;
 }
 .search-btn {
-  background-color: #fbfbfb;
+  background-color: white;
   border: none;
   margin-left: auto;
-  color:white;
-  text-indent:1em;
-  background: url("../icons/search.svg");
+  color: white;
+  text-indent: 1em;
+  background: url("../icons/search.svg") no-repeat center;
 }
 .search-container {
   width: 40%;
-  padding-left: 20px;
   border-radius: 5px;
   font-size: 1.2rem;
   border: 1px solid #d8d5d5;
   display: flex;
   flex-direction: row;
   padding-right: 10px;
+  background-color: white;
 }
 .search-box {
   border: none;
+  padding-left: 20px;
 }
+
+/*?PopUp Alert*/
 .popUp {
   grid-column: 1/3;
   display: flex;
@@ -175,6 +200,8 @@ h3 {
   font-size: 1.3rem;
   font-weight: bold;
 }
+
+/*?Traffic*/
 .traffic {
   grid-column: 1/3;
   border-bottom: var(--common-border);
@@ -193,30 +220,35 @@ h3 {
 .traffic-link {
   margin-left: 25px;
   font-size: 1.2rem;
-  padding: 10px;
-  border-radius: 25px;
   font-weight: bold;
 }
+.traffic-link button {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: inherit;
+}
 
+/*?Daily Traffic*/
 .daily-traffic {
   grid-column: 1/2;
   border-right: var(--common-border);
 }
 
+/*?Mobile User*/
 .mobile-user {
   grid-column: 2/3;
 }
 
+/*?Social States*/
 .social-stats {
   grid-column: 1/3;
   border-top: var(--common-border);
   border-bottom: var(--common-border);
 }
-.icon {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  padding: 10px;
+.icon.twitter,
+.icon.google {
+  width: 50px;
+  height: 50px;
 }
 .social {
   width: 85px;
@@ -226,6 +258,15 @@ h3 {
   text-align: center;
   padding-top: 7px;
   margin-right: 20px;
+}
+.social.twitter {
+  padding-top: 20px;
+}
+.social.facebook {
+  padding-top: 10px;
+}
+.social.google {
+  padding-top: 18px;
 }
 .social-container {
   display: flex;
@@ -255,6 +296,7 @@ h3 {
   font-size: 3.7rem;
 }
 
+/*?Member*/
 .new-member {
   grid-column: 1/2;
   border-bottom: var(--common-border);
@@ -295,6 +337,7 @@ h3 {
   font-size: 1rem;
 }
 
+/*?Activity*/
 .recent-activity {
   grid-column: 2/3;
   border-bottom: var(--common-border);
@@ -306,6 +349,7 @@ h3 {
   padding-top: 0;
 }
 
+/*?Message*/
 .message {
   grid-column: 1/2;
   border-right: var(--common-border);
@@ -346,6 +390,7 @@ button {
   font-size: 1.2rem;
 }
 
+/*?Setting*/
 .setting {
   grid-column: 2/3;
 }
@@ -373,13 +418,17 @@ button {
 .toggle {
   margin-left: 35px;
 }
+.set-btn-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .set-btn-cont button {
   width: 48%;
   height: 60px;
   border-radius: 5px;
 }
 .set-btn-cont button + button {
-  margin-left: 18px;
   background-color: gray;
   color: white;
 }

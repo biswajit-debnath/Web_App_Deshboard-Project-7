@@ -1,87 +1,147 @@
+let Hourly = [
+  0,
+  500,
+  1000,
+  750,
+  1250,
+  1750,
+  1250,
+  1500,
+  1000,
+  1500,
+  2000,
+  1500,
+  2000
+];
+let Daily = [
+  1200,
+  500,
+  800,
+  1550,
+  1250,
+  1750,
+  1250,
+  1500,
+  300,
+  1500,
+  1400,
+  1500,
+  2300
+];
+let Weekly = [
+  600,
+  600,
+  1000,
+  750,
+  1850,
+  750,
+  1250,
+  500,
+  1000,
+  100,
+  2000,
+  1500,
+  2000
+];
+let Monthly = [
+  2000,
+  1500,
+  2000,
+  750,
+  500,
+  1750,
+  2050,
+  1500,
+  1800,
+  500,
+  2000,
+  100,
+  0
+];
+
+//Setting initial traffic graph
+let Data = Hourly;
+let first_traffic_button = document.querySelector(".traffic-link button");
+first_traffic_button.style.backgroundColor = "lightgreen";
+first_traffic_button.style.color = "white";
+
+//Traffic graph
 var ctx = document.getElementById("myChart").getContext("2d");
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: "line",
+let Reset_function = () => {
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: "line",
 
-  // The data for our dataset
-  data: {
-    labels: [
-      "0",
-      "16-22",
-      "23-29",
-      "30-5",
-      "6-12",
-      "13-19",
-      "20-26",
-      "27-3",
-      "4-10",
-      "11-17",
-      "18-24",
-      "25-31"
-    ],
-    datasets: [
-      {
-        label: "My First dataset",
-        backgroundColor: "rgba(255, 99, 132,.4)",
-        borderColor: "blue",
-        data: [
-          0,
-          500,
-          1000,
-          750,
-          1250,
-          1750,
-          1250,
-          1500,
-          1000,
-          1500,
-          2000,
-          1500,
-          2000
-        ]
-      }
-    ]
-  },
-
-  // Configuration options go here
-  options: {
-    elements: {
-      line: {
-        tension: 0 // disables bezier curves
-      },
-      point: {
-        radius: 5
-      }
-    },
-
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            suggestedMax: 2500,
-            suggestedMin: 0,
-            stepSize: 500,
-
-            labelOffset: 25
-            //padding: 40
-          }
-        }
+    // The data for our dataset
+    data: {
+      labels: [
+        "16-22",
+        "23-29",
+        "30-5",
+        "6-12",
+        "13-19",
+        "20-26",
+        "27-3",
+        "4-10",
+        "11-17",
+        "18-24",
+        "25-31"
       ],
-      xAxes: [
+      datasets: [
         {
-          ticks: {
-            beginAtZero: true,
-            labelOffset: -45,
-            //padding: 40
-            suggestedMax: 66,
-            suggestedMin: 0,
-            stepSize: 6
-          }
+          label: "My First dataset",
+          backgroundColor: "rgba(116,119,191,.15)",
+          borderColor: "rgb(116,119,191)",
+          borderWidth: 1,
+          data: Data
         }
       ]
+    },
+
+    // Configuration options go here
+    options: {
+      legend: {
+        display: false
+      },
+      elements: {
+        line: {
+          tension: 0 // disables bezier curves
+        },
+        point: {
+          radius: 8
+        }
+      },
+
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              suggestedMax: 2500,
+              suggestedMin: 0,
+              stepSize: 500,
+
+              labelOffset: 25
+              //padding: 40
+            }
+          }
+        ],
+        xAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+              labelOffset: 65,
+              //padding: 40
+              suggestedMax: 66,
+              suggestedMin: 0,
+              stepSize: 6
+            }
+          }
+        ]
+      }
     }
-  }
-});
+  });
+};
+Reset_function();
 
 var ctx2 = document.getElementById("myChart2").getContext("2d");
 var myBarChart = new Chart(ctx2, {
@@ -90,12 +150,15 @@ var myBarChart = new Chart(ctx2, {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [
       {
-        backgroundColor: "rgba(255, 99, 132,.4)",
+        backgroundColor: "rgb(116,119,191)",
         data: [50, 75, 150, 100, 200, 175, 75]
       }
     ]
   },
   options: {
+    legend: {
+      display: false
+    },
     scales: {
       yAxes: [
         {
@@ -114,16 +177,42 @@ var myBarChart = new Chart(ctx2, {
 });
 
 var ctx3 = document.getElementById("myChart3").getContext("2d");
-var myBarChart = new Chart(ctx3, {
-  type: "pie",
+var myDoughnutChart = new Chart(ctx3, {
+  type: "doughnut",
   data: {
-    labels: ["Phone", "Tablets", "Desktop"],
+    labels: ["Desktop", "Phone", "Tablets"],
     datasets: [
       {
-        backgroundColor: "rgba(255, 99, 132,.4)",
-        data: [20, 20, 60]
+        backgroundColor: ["#51B6C8", "#7477BF", "#78CF82"],
+        data: [1000, 5000, 2000]
       }
     ]
   },
-  options: {}
+  options: {
+    legend: {
+      display: true,
+      position: "right",
+      labels: {
+        boxWidth: 20,
+        fontStyle: "normal",
+        fontSize: 22
+      }
+    }
+  }
+});
+
+//Traffic Buttons
+let traffic_buttons = document.querySelectorAll(".traffic-header button");
+let traffic_buttons_ul = document.querySelector(".traffic-header ul");
+traffic_buttons_ul.addEventListener("click", ev => {
+  if (ev.target.tagName == "BUTTON") {
+    for (let i = 0; i < traffic_buttons.length; i++) {
+      traffic_buttons[i].style.backgroundColor = "white";
+      traffic_buttons[i].style.color = "black";
+    }
+    ev.target.style.backgroundColor = "lightgreen";
+    ev.target.style.color = "white";
+    Data = eval(ev.target.textContent);
+    Reset_function();
+  }
 });

@@ -15,7 +15,12 @@
                 <ul>
                     <li><h1>Your<span>App</span><small>TM</small></small></h1></li>
                     <li><div class="bell">
-                        <div class="notification"></div>
+                            <div class="notification">
+                            </div>
+                        <div class="notification_panel"><div class="notification_first_node">
+                            <p>Notifications</p>
+                            <button>X</button>
+                        </div></div>
                         <?xml version="1.0" encoding="utf-8"?>
                             <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -31,8 +36,8 @@
                             </g>
                         </svg>
                     </div></li>   
-                    <li><img src="images/member-1.jpg" class="profile-img" alt=""></li>                
-                    <li><p class="name">Biswjit Debnath</p></li>
+                    <li class="profile-pic"><img src="images/member-1.jpg" class="profile-img" alt=""></li>                
+                    <li><p class="name">Someone Maybe</p></li>
                 </ul>
             </div>
         </header>
@@ -109,7 +114,7 @@
                         </svg>
                     </a>
                 </div>
-                <div class="setting nav-icon">
+                <div class="nav-icon">
                     <div class="nav-icon-hover"></div>
                     <a href="#setting">
                         <?xml version="1.0" encoding="utf-8"?>
@@ -166,8 +171,8 @@
                             <li class="traffic-link"><button>Monthly</button></li>
                         </ul>
                     </div>
-                    <div class="widget-full">
-                        <canvas id="myChart" width="1000" height="300"></canvas>
+                    <div class="traffic-chart">
+                        <canvas id="myChart" height="120px"></canvas>
                     </div>
                 </div>
     
@@ -326,7 +331,7 @@
                     <form>
                         <input class="search" type=text placeholder="Search for User" onkeyup="myFunction()">
                         <textarea class="mesz" placeholder="Message for User"></textarea>
-                        <button class="button">SEND</button>
+                        <button type="submit" class="button">SEND</button>
                     </form>
                 </div>  
 
@@ -339,7 +344,7 @@
                         </div>
                         <div class="toggle">
                             <label class="switch-light switch-ios" style="width:100px" onclick="">
-                                <input type="checkbox">
+                                <input class="toggle_btn" type="checkbox">
                                 <span>
                                     <span>OFF</span>
                                     <span>ON</span>
@@ -348,7 +353,7 @@
                             </label>
 
                             <label class="switch-light switch-ios" style="width:100px" onclick="">
-                                <input type="checkbox">
+                                <input class="toggle_btn" type="checkbox">
                                 <span>
                                     <span>OFF</span>
                                     <span>ON</span>
@@ -358,13 +363,13 @@
                         </div>
                     </div>
                     <select class="select">
-                            <option value="" selected disabled>Select Timezone</option>
+                        <option value="" selected disabled>Select Timezone</option>
                         <option vlaue="utc">UTC</option>
                         <option vlaue="mumbai">MUMBAI</option>
                     </select>
                     <div class="set-btn-cont">
                         <button class="save-btn">SAVE</button>
-                        <button>CANCEL</button>
+                        <button class="cancel-btn">CANCEL</button>
                     </div>
                 </div>
             </div>

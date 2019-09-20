@@ -58,6 +58,8 @@ let Monthly = [
   100,
   0
 ];
+let traffic_buttons = document.querySelectorAll(".traffic-header button");
+let traffic_buttons_ul = document.querySelector(".traffic-header ul");
 
 //Setting initial traffic graph
 let Data = Hourly;
@@ -65,10 +67,16 @@ let first_traffic_button = document.querySelector(".traffic-link button");
 first_traffic_button.style.backgroundColor = "lightgreen";
 first_traffic_button.style.color = "white";
 
+function clicked_traffic_header(ev) {
+  ev.target.style.backgroundColor = "lightgreen";
+  ev.target.style.color = "white";
+  Data = eval(ev.target.textContent);
+}
+
 //Traffic graph
-var ctx = document.getElementById("myChart").getContext("2d");
+var traffic = document.getElementById("myChart").getContext("2d");
 let Reset_function = () => {
-  var chart = new Chart(ctx, {
+  var chart = new Chart(traffic, {
     // The type of chart we want to create
     type: "line",
 
@@ -98,7 +106,6 @@ let Reset_function = () => {
       ]
     },
 
-    // Configuration options go here
     options: {
       legend: {
         display: false
@@ -143,8 +150,8 @@ let Reset_function = () => {
 };
 Reset_function();
 
-var ctx2 = document.getElementById("myChart2").getContext("2d");
-var myBarChart = new Chart(ctx2, {
+var daily_traffic = document.getElementById("myChart2").getContext("2d");
+var myBarChart = new Chart(daily_traffic, {
   type: "bar",
   data: {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
@@ -176,8 +183,8 @@ var myBarChart = new Chart(ctx2, {
   }
 });
 
-var ctx3 = document.getElementById("myChart3").getContext("2d");
-var myDoughnutChart = new Chart(ctx3, {
+var mobile_users = document.getElementById("myChart3").getContext("2d");
+var myDoughnutChart = new Chart(mobile_users, {
   type: "doughnut",
   data: {
     labels: ["Desktop", "Phone", "Tablets"],
@@ -202,17 +209,13 @@ var myDoughnutChart = new Chart(ctx3, {
 });
 
 //Traffic Buttons
-let traffic_buttons = document.querySelectorAll(".traffic-header button");
-let traffic_buttons_ul = document.querySelector(".traffic-header ul");
 traffic_buttons_ul.addEventListener("click", ev => {
   if (ev.target.tagName == "BUTTON") {
     for (let i = 0; i < traffic_buttons.length; i++) {
       traffic_buttons[i].style.backgroundColor = "white";
       traffic_buttons[i].style.color = "black";
     }
-    ev.target.style.backgroundColor = "lightgreen";
-    ev.target.style.color = "white";
-    Data = eval(ev.target.textContent);
+    clicked_traffic_header(ev);
     Reset_function();
   }
 });

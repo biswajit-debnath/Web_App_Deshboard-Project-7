@@ -25,6 +25,18 @@ button:focus,
 checkbox:focus {
   outline: none;
 }
+.popUp,
+.traffic,
+.daily-traffic,
+.mobile-user,
+.social-stats,
+.new-member,
+.recent-activity,
+.message,
+.setting {
+  width: 90%;
+  margin: auto;
+}
 
 /*?--------------Grid Container------------------*/
 .grid-container {
@@ -32,6 +44,7 @@ checkbox:focus {
   grid-template-columns: 95px 1fr;
 }
 header {
+  z-index: 100;
   grid-column: 1/3;
 }
 nav {
@@ -126,19 +139,19 @@ h1 small {
   order: 2;
 }
 .profile-img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  /* margin-left: 15px; */
   margin-top: 10px;
 }
 
 .header-container li:not(.profile-pic) {
   margin-bottom: 15px;
 }
+
 /*?---------------Nav---------------*/
 .nav-container {
-  text-align: center; /*mobile */
+  text-align: center;
   background-color: var(--secondary-color);
   height: 100%;
   padding-top: 10px;
@@ -156,8 +169,14 @@ h1 small {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  left: -74px;
-  top: 0px;
+  left: 0px;
+  top: -80px;
+}
+.deshboard .nav-icon-hover {
+  background-color: lightgreen;
+}
+.nav-icon:hover > div {
+  background-color: lightgreen;
 }
 
 /*?Main*/
@@ -166,13 +185,13 @@ h1 small {
   display: grid;
   grid-template-columns: 1fr;
 }
-
-/*?Main Header*/
 h3 {
   margin-bottom: 25px;
   margin-top: 25px;
   font-size: 1.4rem;
 }
+
+/*?Main Header*/
 .main-header {
   display: flex;
   flex-direction: column;
@@ -193,14 +212,6 @@ h3 {
   background-color: #fbfbfb;
   margin: auto;
 }
-.search-btn {
-  background-color: white;
-  border: none;
-  margin-left: auto;
-  color: white;
-  text-indent: 1em;
-  background: url("../icons/search.svg") no-repeat center;
-}
 .search-container {
   border-radius: 5px;
   font-size: 1.2rem;
@@ -216,19 +227,13 @@ h3 {
   border: none;
   padding-left: 20px;
 }
-
-/*Mobile*/
-.popUp,
-.traffic,
-.daily-traffic,
-.mobile-user,
-.social-stats,
-.new-member,
-.recent-activity,
-.message,
-.setting {
-  width: 90%;
-  margin: auto;
+.search-btn {
+  background-color: white;
+  border: none;
+  margin-left: auto;
+  color: white;
+  text-indent: 1em;
+  background: url("../icons/search.svg") no-repeat center;
 }
 
 /*?PopUp Alert*/
@@ -259,7 +264,7 @@ h3 {
 /*?Traffic*/
 .traffic {
   border-bottom: var(--common-border);
-  padding-bottom: 20px; /*mobile*/
+  padding-bottom: 20px;
 }
 .traffic-header ul,
 .traffic-header {
@@ -271,7 +276,7 @@ h3 {
   flex-direction: row;
 }
 .traffic-link {
-  font-size: 1rem; /*mobile*/
+  font-size: 1rem;
   font-weight: bold;
 }
 .traffic-link button {
@@ -282,25 +287,20 @@ h3 {
 
 /*?Daily Traffic*/
 .daily-traffic {
-  /* grid-column: 1/2; */
   border-right: var(--common-border);
 }
-/*Mobile*/
 .daily-traffic {
-  /* grid-column: 1/3;  */
   border-bottom: var(--common-border);
   padding-bottom: 20px;
 }
 
 /*?Mobile User*/
 .mobile-user {
-  /* grid-column: 2/3; */
-  padding-bottom: 20px; /*Mobile*/
+  padding-bottom: 20px;
 }
 
 /*?Social States*/
 .social-stats {
-  /* grid-column: 1/3; */
   border-top: var(--common-border);
   border-bottom: var(--common-border);
 }
@@ -312,7 +312,6 @@ h3 {
 .social-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding-bottom: 20px;
 }
 .social {
@@ -340,7 +339,7 @@ h3 {
   flex-direction: row;
   border-radius: 5px;
   background-color: #fbfbfb;
-  margin-bottom: 15px; /*Mobile*/
+  margin-bottom: 15px;
 }
 .social-title p:first-child {
   font-size: 1.5rem;
@@ -358,9 +357,8 @@ h3 {
 
 /*?Member*/
 .new-member {
-  /* border-right: var(--common-border); */
   border-bottom: var(--common-border);
-  padding-bottom: 20px; /*Mobile*/
+  padding-bottom: 20px;
 }
 .member {
   display: flex;
@@ -399,9 +397,8 @@ h3 {
 
 /*?Activity*/
 .recent-activity {
-  /* grid-column: 2/3; */
   border-bottom: var(--common-border);
-  padding-bottom: 20px; /*Mobile*/
+  padding-bottom: 20px;
 }
 .arrow {
   width: 30px;
@@ -412,10 +409,8 @@ h3 {
 
 /*?Message*/
 .message {
-  /* grid-column: 1/2; */
-  /* border-right: var(--common-border); */
-  border-bottom: var(--common-border); /*Mobile*/
-  padding-bottom: 20px; /*Mobile*/
+  border-bottom: var(--common-border);
+  padding-bottom: 20px;
 }
 .search,
 .mesz,
@@ -455,7 +450,6 @@ button {
 
 /*?Setting*/
 .setting {
-  /* grid-column: 2/3; */
   padding-bottom: 40px;
 }
 .toggle-container {
@@ -497,7 +491,7 @@ button {
   color: white;
 }
 
-/*!Tablet versio*/
+/*!Tablet version*/
 @media (min-width: 768px) {
   .header-container ul {
     padding-top: 0px;
@@ -523,11 +517,11 @@ button {
     font-size: 1.1rem;
   }
   .profile-img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-left: 15px;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .header-container li:not(.profile-pic) {
@@ -538,7 +532,7 @@ button {
 /*!Desktop Version*/
 @media (min-width: 1024px) {
   body {
-    font-size: 14px; /*mobile*/
+    font-size: 14px;
   }
   /*Grid container*/
   header {
@@ -551,12 +545,11 @@ button {
     grid-column: 2/3;
   }
   /*Nav*/
-  .deshboard .nav-icon-hover {
-    background-color: lightgreen;
+  .nav-icon-hover {
+    left: -74px;
+    top: 0px;
   }
-  .nav-icon:hover > div {
-    background-color: lightgreen;
-  }
+
   /*Main*/
   .main-container {
     grid-template-columns: 1fr 1fr;
@@ -675,7 +668,7 @@ button {
     flex-direction: row;
     border-radius: 5px;
     background-color: #fbfbfb;
-    margin-bottom: 15px; /*Mobile*/
+    margin-bottom: 15px;
   }
   .social-title p:first-child {
     font-size: 1.5rem;
